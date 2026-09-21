@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "가톨릭문화원 ALMA ART — 건축이 된 기도, 예술이 된 복음." } = Astro.props;
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-ivory text-ink">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-ivory/85 backdrop-blur border-b border-ink/5">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="serif text-xl tracking-tight">
+          <span class="text-wine">가톨릭</span>문화원 ALMA ART
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex gap-8 text-sm">
+          <a href="/about" class="hover:text-wine transition">소개</a>
+          <a href="/spaces" class="hover:text-wine transition">공간</a>
+          <a href="/programs" class="hover:text-wine transition">프로그램</a>
+          <a href="/reservations" class="hover:text-wine transition">예약·신청</a>
+          <a href="/support" class="hover:text-wine transition">후원</a>
+          <a href="/contact" class="hover:text-wine transition">오시는 길</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-ink/5 rounded transition" aria-label="메뉴">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <nav id="mobile-menu" class="hidden md:hidden border-t border-ink/5 bg-ivory/95 backdrop-blur">
+        <div class="max-w-6xl mx-auto px-6 py-4 space-y-3">
+          <a href="/about" class="block py-2 hover:text-wine transition text-sm">소개</a>
+          <a href="/spaces" class="block py-2 hover:text-wine transition text-sm">공간</a>
+          <a href="/programs" class="block py-2 hover:text-wine transition text-sm">프로그램</a>
+          <a href="/reservations" class="block py-2 hover:text-wine transition text-sm">예약·신청</a>
+          <a href="/support" class="block py-2 hover:text-wine transition text-sm">후원</a>
+          <a href="/contact" class="block py-2 hover:text-wine transition text-sm">오시는 길</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 bg-ink text-ivory/85">
+      <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-10 text-sm">
+        <div class="md:col-span-2">
+          <div class="serif text-lg text-ivory mb-3">가톨릭문화원 ALMA ART</div>
+          <p class="text-ivory/70 leading-relaxed">
+            천주교 인천교구 소속 사단법인.<br />
+            문화예술을 통해 가톨릭 가치를 사회와 나눕니다.
+          </p>
+        </div>
+        <div>
+          <div class="text-gold font-semibold mb-3">문의</div>
+          <p class="text-ivory/70 leading-relaxed">
+            대표번호 1577-3217<br />
+            info@koccc.kr<br />
+            경기도 김포시 하성면<br />월하로 970-18
+          </p>
+        </div>
+        <div>
+          <div class="text-gold font-semibold mb-3">공식 채널</div>
+          <ul class="space-y-2 text-ivory/70">
+            <li><a href="https://www.youtube.com/channel/UC2DFlrmRnNpsMAtaicFeibg" target="_blank" rel="noopener" class="hover:text-gold">YouTube · 가톨릭문화원 Alma Art</a></li>
+            <li><a href="/news" class="hover:text-gold">언론보도</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-ivory/10 py-6 text-center text-xs text-ivory/50">
+        © 2026 가톨릭문화원 ALMA ART. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuLinks = mobileMenu.querySelectorAll('a');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close menu when a link is clicked
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

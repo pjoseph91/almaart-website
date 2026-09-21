@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="오시는 길 · 한국가톨릭문화원">
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <div class="text-wine text-xs tracking-[0.3em] font-semibold mb-3">CONTACT</div>
+    <h1 class="serif text-4xl md:text-5xl mb-12">오시는 길 · 문의</h1>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <div class="text-gold text-xs tracking-widest mb-2">주소</div>
+        <p class="serif text-xl mb-8 leading-relaxed">
+          경기도 김포시 하성면<br />
+          월하로 970-18<br />
+          한국가톨릭문화원 아트센터
+        </p>
+
+        <div class="text-gold text-xs tracking-widest mb-2">대표번호</div>
+        <p class="serif text-2xl mb-8">1577-3217</p>
+
+        <div class="text-gold text-xs tracking-widest mb-2">이메일</div>
+        <p class="serif text-xl mb-8">info@koccc.kr</p>
+
+        <div class="text-gold text-xs tracking-widest mb-2">공식 채널</div>
+        <p><a href="https://www.youtube.com/channel/UC2DFlrmRnNpsMAtaicFeibg" target="_blank" rel="noopener" class="text-wine underline">유튜브 · 가톨릭문화원 Alma Art</a></p>
+      </div>
+
+      <div class="aspect-square bg-gradient-to-br from-sage/30 to-sage/10 flex items-center justify-center border border-ink/10 rounded" id="kakao-map">
+        <div class="text-center text-ink/40">
+          <div class="text-3xl mb-2">📍</div>
+          <div class="text-sm">경기도 김포시 하성면 월하로 970-18</div>
+          <div class="text-xs text-ink/30 mt-2">(배포 시 지도 표시)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-sm text-ink/50">
+      <p>사단법인 한국가톨릭문화원 아트센터</p>
+    </div>
+  </section>
+
+  <!-- Kakao Map Script (배포 시 활성화) -->
+  <!-- 
+  <script async src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=906a7c9b9dceb9ae13a2743e5381ab06&libraries=services"></script>
+  <script>
+    if (typeof kakao !== 'undefined' && kakao.maps) {
+      const container = document.getElementById('kakao-map');
+      const options = {
+        center: new kakao.maps.LatLng(37.6784, 126.6719),
+        level: 3
+      };
+      const map = new kakao.maps.Map(container, options);
+      const markerPosition = new kakao.maps.LatLng(37.6784, 126.6719);
+      const marker = new kakao.maps.Marker({
+        position: markerPosition,
+        title: '한국가톨릭문화원 아트센터'
+      });
+      marker.setMap(map);
+      const infowindow = new kakao.maps.InfoWindow({
+        content: '<div style="padding: 12px; font-size: 13px; line-height: 1.4;">한국가톨릭문화원 아트센터<br/>경기도 김포시 하성면 월하로 970-18</div>'
+      });
+      infowindow.open(map, marker);
+    }
+  </script>
+  -->
+</Layout>

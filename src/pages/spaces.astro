@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+const spaces = [
+  { name: '실비아홀', en: 'Sylvia Hall', desc: '반원형 프로시니엄 무대, 1층 348석·2층 108석 총 456석 콘서트홀. 밀폐형 벽면과 반사판·복합음향 설비. 명칭은 부지·기금을 봉헌한 후원회장 신영애의 세례명 실비아에서 유래합니다.', tag: 'CONCERT' },
+  { name: '데꼴로레스', en: 'De Colores Gallery', desc: '2층 로비의 상설 갤러리. 미술·공예 작품 전시가 열립니다.', tag: 'GALLERY' },
+  { name: '아모르비니아', en: 'Amorvinia Café', desc: '1층 카페. 인문학 서적과 그림책을 비치한 라운지 공간.', tag: 'CAFÉ' },
+  { name: '바울라홀', en: 'Paula Hall', desc: '1층 세미나·다목적 공간.', tag: 'SEMINAR' },
+];
+---
+<Layout title="공간 · 가톨릭문화원 ALMA ART">
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-wine text-xs tracking-[0.3em] font-semibold mb-3">SPACES</div>
+    <h1 class="serif text-4xl md:text-5xl mb-4">가톨릭문화원 ALMA ART 아트센터</h1>
+    <p class="text-ink/60 mb-2">부지 5,245m² · 연면적 4,895m² · 지상 2층 지하 1층</p>
+    <p class="text-ink/60 mb-12">건축 <b>김석철</b> (아키반건축도시연구원) · 2013년 개관</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {spaces.map(s => (
+        <div class="border-t border-ink/10 pt-8">
+          <div class="text-gold text-xs tracking-widest mb-2">{s.tag}</div>
+          <div class="flex items-baseline gap-3 mb-4">
+            <h2 class="serif text-3xl">{s.name}</h2>
+            <span class="text-ink/40 text-sm">{s.en}</span>
+          </div>
+          <p class="text-ink/70 leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
