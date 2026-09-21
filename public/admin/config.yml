@@ -2,9 +2,8 @@ backend:
   name: github
   repo: pjoseph91/almaart-website
   branch: main
-  auth_endpoint: /api/auth
+  base_url: https://almaart-website.pjoseph9191.workers.dev
 
-local_backend: true
 media_folder: public/images
 public_folder: /images
 
@@ -20,72 +19,68 @@ collections:
         label: 홈페이지
         file: src/pages/index.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
-          - name: hero_title
-            label: 히어로 제목
-            widget: text
-          - name: hero_subtitle
-            label: 히어로 설명
-            widget: text
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
 
       - name: about
         label: 소개 페이지
         file: src/pages/about.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
-          - name: subtitle
-            label: 페이지 부제목
-            widget: text
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
 
       - name: spaces
         label: 공간 페이지
         file: src/pages/spaces.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
 
       - name: programs
         label: 프로그램 페이지
         file: src/pages/programs.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
 
       - name: contact
         label: 오시는 길 페이지
         file: src/pages/contact.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
-          - name: address
-            label: 주소
-            widget: text
-          - name: phone
-            label: 전화번호
-            widget: string
-          - name: email
-            label: 이메일
-            widget: string
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
 
       - name: reservations
         label: 예약·신청 페이지
         file: src/pages/reservations.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
 
       - name: support
         label: 후원 페이지
         file: src/pages/support.astro
         fields:
-          - name: title
-            label: 페이지 제목
-            widget: string
+          - label: 페이지 정보
+            name: page_info
+            widget: object
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
