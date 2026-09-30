@@ -16,9 +16,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="text-wine">예술이 된 복음.</span>
         </h1>
         <p class="text-lg md:text-xl text-ink/75 leading-relaxed max-w-xl mb-10">
-          김포 전류리 강변에 자리한 가톨릭문화원 ALMA ART 아트센터.<br />
-          예술의전당 설계자 <b>김석철</b> 건축가의 유작에서,<br />
-          미사와 공연·전시가 한 자리에서 열립니다.
+          가톨릭문화원 ALMA ART 아트센터에서 미사와 공연·전시가 열립니다.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/programs" class="px-8 py-4 bg-wine text-ivory font-medium hover:bg-wine/90 transition">다가오는 프로그램</a>
@@ -26,21 +24,25 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="md:col-span-2 space-y-4 text-sm">
-        <div class="bg-ivory/60 backdrop-blur border border-ink/5 p-6">
-          <div class="text-gold text-xs tracking-widest mb-1">RESIDENT</div>
-          <div class="serif text-lg mb-2">한국가톨릭챔버오케스트라</div>
-          <div class="text-ink/60">제60회 정기연주회 개최 (2026.09)</div>
-        </div>
-        <div class="bg-ivory/60 backdrop-blur border border-ink/5 p-6">
-          <div class="text-gold text-xs tracking-widest mb-1">FILM</div>
-          <div class="serif text-lg mb-2">알마아트 (ALMA ART)</div>
-          <div class="text-ink/60">《탄생》(2022) 등 제작 참여</div>
-        </div>
-        <div class="bg-ivory/60 backdrop-blur border border-ink/5 p-6">
-          <div class="text-gold text-xs tracking-widest mb-1">FESTIVAL</div>
-          <div class="serif text-lg mb-2">한국가톨릭어린이영화제</div>
-          <div class="text-ink/60">한국교회 최초의 어린이영화제</div>
+      <div class="md:col-span-2">
+        <div class="bg-ink shadow-2xl overflow-hidden">
+          <div class="flex items-center justify-between px-5 py-3 text-ivory text-xs tracking-widest">
+            <span class="text-gold">CATHOLIC CULTURE CENTER · YOUTUBE</span>
+            <span class="text-ivory/50">ALMA ART</span>
+          </div>
+          <div class="aspect-video">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/CAErOOmGIQs"
+              title="가톨릭문화원 ALMA ART 유튜브"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <a href="https://www.youtube.com/channel/UC2DFlrmRnNpsMAtaicFeibg" target="_blank" rel="noopener" class="block px-5 py-3 text-sm text-ivory/70 hover:text-gold transition">
+            문화원 유튜브 채널 바로가기 →
+          </a>
         </div>
       </div>
     </div>
